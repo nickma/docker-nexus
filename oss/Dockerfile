@@ -61,7 +61,7 @@ USER nexus
 ENV CONTEXT_PATH /nexus
 ENV MAX_HEAP 768m
 ENV MIN_HEAP 256m
-ENV JAVA_OPTS -server -Djava.net.preferIPv4Stack=true
+ENV JAVA_OPTS -server -Djava.net.preferIPv4Stack=true -Djavax.net.ssl.trustStore=/nucert/iqserver.ks -Djavax.net.ssl.trustStorePassword=changeit
 ENV LAUNCHER_CONF ./conf/jetty.xml ./conf/jetty-requestlog.xml
 CMD ${JAVA_HOME}/bin/java \
   -Dnexus-work=${SONATYPE_WORK} -Dnexus-webapp-context-path=${CONTEXT_PATH} \
